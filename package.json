@@ -1,0 +1,41 @@
+{
+  "name": "RainbowChat",
+  "version": "0.0.1",
+  "description": "Chat platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec",
+    "test_debug": "NODE_ENV=test ./node_modules/.bin/mocha debug --reporter spec",
+    "start": "node app.js",
+    "cover": "NODE_ENV=test istanbul cover _mocha",
+    "coveralls": "NODE_ENV=test npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctoffalo/RainbowChat.git"
+  },
+  "keywords": [
+    "rainbow",
+    "ecommerce",
+    "node",
+    "docker"
+  ],
+  "author": "Rainbow Makers",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/RainbowMakers/RainbowChat/issues"
+  },
+  "homepage": "https://github.com/ctoffalo/RainbowChat.git#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "consolidate": "^0.14.1",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.5",
+    "nunjucks": "^2.5.1",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8"
+  },
+  "devDependencies": {}
+}
