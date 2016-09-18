@@ -24,7 +24,7 @@
 			var msjToSend = form['msj-to-send'].value;
 			form['msj-to-send'].value = '';
 			
-			socket.emit('envio de mensaje', {'room': 'roomOne', msj: msjToSend});	
+			socket.emit('sendMessage', {'room': 'roomOne', msj: msjToSend});	
 
 		} 
 
@@ -32,8 +32,15 @@
 			socket.emit('unsuscribe',room);
 		}
 
-		socket.on('envio de mensaje para frontend', function(msj){
+		socket.on('sendMessageToFront', function(msj){
 			document.getElementById('container-msjs').innerHTML += '<li>' + msj + '</li>';
+		});
+
+
+		socket.on('renderOldMessages', function(messages){
+			messages.forEach(function(message){
+				document.getElementById('container-msjs').innerHTML += '<li> ' + message.content + '</li>';
+			})
 		})
 
 
