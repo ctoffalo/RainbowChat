@@ -7,6 +7,7 @@
 	.container-msjs{
 		height: 200px;
 		width: 420px;
+		overflow-y: scroll;
 		background: orange;
 	}
 	</style>
@@ -38,6 +39,7 @@
 
 
 		socket.on('renderOldMessages', function(messages){
+			document.getElementById('container-msjs').innerHTML = "";
 			messages.forEach(function(message){
 				document.getElementById('container-msjs').innerHTML += '<li> ' + message.content + '</li>';
 			})
@@ -65,6 +67,6 @@
 	</div>
 </form>
 
-<button onclick="desuscribir('roomOne');">Desuscribirse de la roomOne</button>
+<!--<button onclick="desuscribir('roomOne');">Desuscribirse de la roomOne</button>-->
 </body>
 </html>
