@@ -13,6 +13,7 @@ io.on('connection', function(socket){
 app.engine('html', engines.nunjucks);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+app.use('/static', express.static(__dirname + '/public'));
 
 
 app.get('/chat', function(req,res){
